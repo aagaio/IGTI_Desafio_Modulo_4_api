@@ -22,6 +22,8 @@ const findAll = async (req, res) => {
     : {};
 
   try {
+    const grade = await gradesModel.findOne({ name: name }, { _id: 0 });
+
     res.send();
     logger.info(`GET /grade`);
   } catch (error) {
