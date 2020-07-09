@@ -38,7 +38,7 @@ const findAll = async (req, res) => {
     const result = await Grade.find(condition);
 
     res.send(result);
-    logger.info(`GET /grade - ${result}`);
+    logger.info(`GET /grade`);
   } catch (error) {
     res
       .status(500)
@@ -50,8 +50,9 @@ const findAll = async (req, res) => {
 const findOne = async (req, res) => {
   const id = req.params.id;
 
+  const result = await Grade.findOne({ _id: id });
   try {
-    res.send();
+    res.send(result);
 
     logger.info(`GET /grade - ${id}`);
   } catch (error) {
