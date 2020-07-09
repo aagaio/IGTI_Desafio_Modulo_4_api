@@ -110,10 +110,10 @@ const remove = async (req, res) => {
 };
 
 const removeAll = async (req, res) => {
-  const id = req.params.id;
+  // const id = req.params.id;
 
   try {
-    const allResult = await Grade.find({ _id: id });
+    const allResult = await Grade.find();
     allResult.map(async (document) => {
       await Grade.remove({ _id: document._id });
     });
