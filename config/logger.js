@@ -1,6 +1,7 @@
 import winston from 'winston';
 import winstondb from 'winston-mongodb';
 // import MongoDB from 'winston-mongodb';
+import dotenv from 'dotenv';
 import { db } from '../models/index.js';
 
 const { combine, timestamp, label, printf } = winston.format;
