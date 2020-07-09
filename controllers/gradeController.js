@@ -35,10 +35,10 @@ const findAll = async (req, res) => {
     : {};
 
   try {
-    const grade = await Grade.find({ condition }, { _id: 0 });
+    const result = await Grade.find(condition);
 
-    res.send(grade);
-    logger.info(`GET /grade - ${grade}`);
+    res.send(result);
+    logger.info(`GET /grade - ${result}`);
   } catch (error) {
     res
       .status(500)
