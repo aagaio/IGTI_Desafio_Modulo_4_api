@@ -50,7 +50,7 @@ const findAll = async (req, res) => {
 const findOne = async (req, res) => {
   const id = req.params.id;
 
-  const result = await Grade.findOne({ _id: id });
+  const result = await Grade.findByID({ id });
   try {
     res.send(result);
 
