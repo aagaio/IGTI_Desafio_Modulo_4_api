@@ -12,6 +12,7 @@ import { db } from './models/index.js';
     await db.mongoose.connect(db.url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: true,
     });
     console.log(db.url);
     logger.info('Conectado ao banco de dados');
