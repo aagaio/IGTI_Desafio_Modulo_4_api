@@ -23,9 +23,9 @@ const findAll = async (req, res) => {
     : {};
 
   try {
-    const grade = await gradesModel.findOne({ name }, { _id: 0 });
+    const grade = await mongoose.findOne({ name }, { _id: 0 });
 
-    res.send();
+    res.send(grade);
     logger.info(`GET /grade`);
   } catch (error) {
     res
