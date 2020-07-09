@@ -1,5 +1,4 @@
-
-export (default) => { 
+export default (mongoose) => {
   const gradesSchema = mongoose.Schema({
     name: {
       type: String,
@@ -25,9 +24,8 @@ export (default) => {
     },
   });
 
-
   const gradesModel = mongoose.model('grades', gradesSchema, 'grades');
   return gradesModel;
-}
+};
 
 export { gradesModel };
