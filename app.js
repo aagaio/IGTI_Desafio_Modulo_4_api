@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import { gradeRouter } from './routes/gradeRouter.js';
 import { logger } from './config/logger.js';
@@ -12,6 +13,7 @@ import { db } from './models/index.js';
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    console.log(db.url);
     logger.info('Conectado ao banco de dados');
   } catch (error) {
     logger.error(`Erro ao conectar no banco de dados! ${error}`);
