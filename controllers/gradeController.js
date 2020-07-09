@@ -113,7 +113,10 @@ const removeAll = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const result = await Grade.findAndDelete({ _id: id });
+    const allResult = await Grade.find({_id: id});
+    allResult.map(document => {
+      await Grade.remove({ _id: document._id })
+    });
     res.send({
       message: `Grades excluidos`,
     });
