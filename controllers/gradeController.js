@@ -3,9 +3,20 @@ import { logger } from '../config/logger.js';
 import gradesModel from '../models/gradesModel.js';
 
 const create = async (req, res) => {
+  const Grade = db.grades;
+  const { name, subject, type, value, lastModified } = req.body;
+  const grade = new Grade({
+    name: name,
+    subject: subject,
+    type: type,
+    value: value,
+    lastModified: lastModified,
+  });
+
   try {
-    res.send();
-    logger.info(`POST /grade - ${JSON.stringify()}`);
+    const result = await grade.save(grade);
+    res.send(result);
+    logger.info(`POST /grade - ${JSON.stringify(result)}`);
   } catch (error) {
     res
       .status(500)
