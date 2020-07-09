@@ -38,7 +38,7 @@ const findAll = async (req, res) => {
     const grade = await Grade.find({ condition }, { _id: 0 });
 
     res.send(grade);
-    logger.info(`GET /grade`);
+    logger.info(`GET /grade - ${grade}`);
   } catch (error) {
     res
       .status(500)
