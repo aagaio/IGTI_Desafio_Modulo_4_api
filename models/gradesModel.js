@@ -28,4 +28,4 @@ export default (mongoose) => {
   return gradesModel;
 };
 
-export { gradesModel };
+// export { gradesModel };
