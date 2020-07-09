@@ -79,6 +79,8 @@ const update = async (req, res) => {
       type: type,
       value: value,
     });
+    console.log('result= ' + result);
+    console.log('id= ' + id);
     res.send({ message: 'Grade atualizado com sucesso' });
 
     logger.info(`PUT /grade - ${id} - ${JSON.stringify(req.body)}`);
