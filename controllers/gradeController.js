@@ -1,5 +1,6 @@
 import { db } from '../models/index.js';
 import { logger } from '../config/logger.js';
+import gradesModel from '../models/gradesModel.js';
 
 const create = async (req, res) => {
   try {
