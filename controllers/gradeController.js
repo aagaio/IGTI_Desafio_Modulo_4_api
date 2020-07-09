@@ -2,8 +2,9 @@ import { db } from '../models/index.js';
 import { logger } from '../config/logger.js';
 import gradesModel from '../models/gradesModel.js';
 
+const Grade = db.grades;
+
 const create = async (req, res) => {
-  const Grade = db.grades;
   const { name, subject, type, value, lastModified } = req.body;
   const grade = new Grade({
     name: name,
@@ -34,7 +35,7 @@ const findAll = async (req, res) => {
     : {};
 
   try {
-    const grade = await mongoose.findOne({ name }, { _id: 0 });
+    const grade = await Grade.find({ name }, { _id: 0 });
 
     res.send(grade);
     logger.info(`GET /grade`);
