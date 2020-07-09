@@ -57,7 +57,7 @@ const findOne = async (req, res) => {
     logger.info(`GET /grade - ${id}`);
   } catch (error) {
     res.status(500).send({ message: 'Erro ao buscar o Grade id: ' + id });
-    logger.error(`GET /grade - ${JSON.stringify(error.message)}`);
+    logger.error(`GET /grade - id=${id} - ${JSON.stringify(error.message)}`);
   }
 };
 
